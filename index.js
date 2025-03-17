@@ -21,9 +21,9 @@ const videos = {
         { title: "Aula 3: Expressões Comuns", url: "https://www.youtube.com/embed/PJT6vROO3eM" }
     ],
     História: [  // Nova categoria adicionada
-        { title: "Aula 1: Antiguidade", url: "https://www.youtube.com/embed/example1" },
-        { title: "Aula 2: Idade Média", url: "https://www.youtube.com/embed/example2" },
-        { title: "Aula 3: História Moderna", url: "https://www.youtube.com/embed/example3" }
+        { title: "Aula 1: Antiguidade", url: "https://www.youtube.com/watch?v=q7E4XrfGGnE" },
+        { title: "Aula 2: Idade Média", url: "https://www.youtube.com/watch?v=K8zw6r-sw7o" },
+        { title: "Aula 3: História Moderna", url: "https://www.youtube.com/watch?v=Q4E3vPl-KkY" }
     ]
 };
 
