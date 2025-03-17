@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script type="text/javascript" src="./index.js" defer=""></script>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+
+  <body>
+    <main>
+      <h1>Flix</h1>
+
+      <!-- Botões de navegação -->
+      <nav class="subject-buttons">
+        <button onclick="goHome()">Início</button>
+        <button onclick="openCategory('Matemática')">Matemática</button>
+        <button onclick="openCategory('Física')">Física</button>
+        <button onclick="openCategory('Português')">Português</button>
+        <button onclick="openCategory('Inglês')">Inglês</button>
+      </nav>
+
+      <section class="category">
+        <h2>Matemática</h2>
+        <div class="video-list" id="matemática-videos"></div>
+      </section>
+
+      <section class="category">
+        <h2>Física</h2>
+        <div class="video-list" id="física-videos"></div>
+      </section>
+
+      <section class="category">
+        <h2>Português</h2>
+        <div class="video-list" id="português-videos"></div>
+      </section>
+
+      <section class="category">
+        <h2>Inglês</h2>
+        <div class="video-list" id="inglês-videos"></div>
+      </section>
+
+      <section class="category" id="future-category">
+        <h2>Em Breve: Novas Categorias</h2>
+        <p>Estamos adicionando mais matérias em breve!</p>
+      </section>
+    </main>
+  </body>
+
+</html>
