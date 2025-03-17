@@ -19,67 +19,52 @@ const videos = {
         { title: "Aula 1: Verbos Básicos", url: "https://www.youtube.com/embed/bSeZlT7Og8I" },
         { title: "Aula 2: Tempos Verbais", url: "https://www.youtube.com/embed/6z57Ug01b_8" },
         { title: "Aula 3: Expressões Comuns", url: "https://www.youtube.com/embed/PJT6vROO3eM" }
+    ],
+    História: [  // Nova categoria adicionada
+        { title: "Aula 1: Antiguidade", url: "https://www.youtube.com/embed/example1" },
+        { title: "Aula 2: Idade Média", url: "https://www.youtube.com/embed/example2" },
+        { title: "Aula 3: História Moderna", url: "https://www.youtube.com/embed/example3" }
     ]
 };
 
-// Exibe apenas a matéria selecionada
-function openCategory(category) {
-    const mainContent = document.querySelector("main");
-    mainContent.innerHTML = `
-        <button onclick="goHome()" class="back-btn">Voltar</button>
-        <section class="category">
-            <h2>${category}</h2>
-            <div class="video-list" id="${category.toLowerCase()}-videos"></div>
-        </section>
-    `;
-
-    const container = document.getElementById(`${category.toLowerCase()}-videos`);
-    videos[category].forEach(video => {
-        const videoItem = document.createElement("div");
-        videoItem.classList.add("video-item");
-        videoItem.innerHTML = `
-            <p><strong>${video.title}</strong></p>
-            <iframe src="${video.url}" frameborder="0" allowfullscreen></iframe>
-        `;
-        container.appendChild(videoItem);
-    });
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-// Volta para a visualização principal com todas as matérias
 function goHome() {
     const mainContent = document.querySelector("main");
     mainContent.innerHTML = `
         <h1>Flix</h1>
         <nav class="subject-buttons">
-            <button onclick="goHome()">Início</button>
+            <button onclick="goHome()" disabled>Início</button>
             <button onclick="openCategory('Matemática')">Matemática</button>
             <button onclick="openCategory('Física')">Física</button>
             <button onclick="openCategory('Português')">Português</button>
             <button onclick="openCategory('Inglês')">Inglês</button>
+            <button onclick="openCategory('História')">História</button> <!-- Novo botão -->
         </nav>
-        
+
         <section class="category">
             <h2>Matemática</h2>
             <div class="video-list" id="matemática-videos"></div>
         </section>
-        
+
         <section class="category">
             <h2>Física</h2>
             <div class="video-list" id="física-videos"></div>
         </section>
-        
+
         <section class="category">
             <h2>Português</h2>
             <div class="video-list" id="português-videos"></div>
         </section>
-        
+
         <section class="category">
             <h2>Inglês</h2>
             <div class="video-list" id="inglês-videos"></div>
         </section>
-        
+
+        <section class="category">
+            <h2>História</h2> <!-- Nova seção adicionada -->
+            <div class="video-list" id="história-videos"></div>
+        </section>
+
         <section class="category" id="future-category">
             <h2>Em Breve: Novas Categorias</h2>
             <p>Estamos adicionando mais matérias em breve!</p>
@@ -90,12 +75,11 @@ function goHome() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// Carrega vídeos normalmente
 function loadVideos() {
     Object.keys(videos).forEach(category => {
         const container = document.getElementById(`${category.toLowerCase()}-videos`);
         if (container) {
-            container.innerHTML = ""; // Limpa conteúdos antigos
+            container.innerHTML = "";  // Limpa o conteúdo anterior
             videos[category].forEach(video => {
                 const videoItem = document.createElement("div");
                 videoItem.classList.add("video-item");
